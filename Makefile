@@ -10,7 +10,7 @@ run: build
 
 .PHONY: build # Build the map
 build:
-	export MAP_PATH=quake1/${map}.map; test -f src/${map}.map && export MAP_PATH=src/${map}.map; cd ironwail && ../tools/ericw-tools/bin/qbsp -basedir . ../$${MAP_PATH} id1/maps/${map}.bsp && ../tools/ericw-tools/bin/light id1/maps/${map}.bsp
+	export MAP_PATH=quake1/${map}.map; test -f src/${map}.map && export MAP_PATH=src/${map}.map; cd ironwail && ../tools/ericw-tools/bin/qbsp -basedir . ../$${MAP_PATH} id1/maps/${map}.bsp && ../tools/ericw-tools/bin/light id1/maps/${map}.bsp && ../tools/ericw-tools/bin/vis id1/maps/${map}.bsp
 
 .PHONY: help # Show this help screen
 help:
