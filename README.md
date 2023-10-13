@@ -53,7 +53,7 @@ the environment variable before you run it.
 Install all the dependencies:
 
 ```
-make deps
+make install
 ```
 
 The game assets directory `id1` has now been copied to
@@ -80,12 +80,12 @@ necessary.
 ### Modify an existing level
 
 Lets start with making a small modification to the original Quake
-start map. The map source is found in the `source` directory named
+start map. The map source is found in the `src` directory named
 `start.map`.
 
  * Open Trenchbroom
  * Click `Browse` to open an existing .map file.
- * Navigate to the `source` directory and open `start.map`.
+ * Navigate to the `quake1` directory and open `start.map`.
  * Choose `Quake` from the list of games.
  * Use the `Map Format` of `Autodetect` or `Standard`
  * Click OK.
@@ -95,7 +95,8 @@ Modify the level by adding some additional entities to the scene.
  * Move your view inside the level to where the character starts.
  * Click the `Entity` tab, and find the `monster_dog` entity.
  * Drag a few dogs into the main starting area.
- * Go to `File` -> `Save document as`, and save it as `start_dogs.map`.
+ * Go to `File` -> `Save document as`, and save it as `start_dogs.map`
+   inside the `src` directory (not in `quake1`).
  * You may close trenchbroom if you wish.
 
 Build and run the modified map, run:
@@ -129,24 +130,37 @@ make map=e1m1
 
 ### Source files
 
-The files in the `source` directory are copies of the original quake
+The files in the `src` directory are for your own maps that you make
+or modify.
+
+The files in the `quake1` directory are copies of the original quake
 levels ([open sourced by John Romero in
 2016!](https://rome.ro/news/2016/2/14/quake-map-sources-released)).
-These files can be very useful to examine for your own design ideas,
-but you can also choose to delete if you don't need them.
+These files can be very useful to examine for your own design ideas.
 
-You can load any level from inside the quake console:
+Maps from either of these directories can be edited and played (eg.
+`make map=e1m1` loads e1m1.map from the quake1 directory). The `src`
+directory takes precedence over the `quake1` directory, so I recommend
+you treat the `quake1` directory as read-only, and if you wish to edit
+one of the original levels, copy it to the `src` directory first, with
+the same name, and it will override the original level.
+
+### Quake console
+
+You can load any level from inside the [quake
+console](https://www.quakewiki.net/console/console-commands/quake-console-commands/):
 
  * From inside the game, hit the `~` key to open the console
- * type `map foo` to load the `foo` map.
+ * Type `map foo` and press Enter to load the `foo` map.
 
 ## Links
 
  * [dumptruck_ds trenchbroom
    series](https://www.youtube.com/playlist?list=PLgDKRPte5Y0AZ_K_PZbWbgBAEt5xf74aE)
  * [Quake mapping tips video](https://yewtu.be/watch?v=G4tWWiuaF7g)
- * [quake command line arguments](https://quakewiki.org/wiki/Command_line_parameters) (these are the same with ironwail)
- * [Map_compiling](https://quakewiki.org/wiki/Map_compiling) (on quake-wiki)
+ * [Quake command line arguments](https://quakewiki.org/wiki/Command_line_parameters) (these are the same with ironwail)
+ * [Quake console commands](https://www.quakewiki.net/console/console-commands/quake-console-commands/)
+ * [Map_compiling](https://quakewiki.org/wiki/Map_compiling)
  * [QodotPlugin/Qodot](https://github.com/QodotPlugin/Qodot/) - import your quake
    maps into the Godot game engine!
  * [jitspoe/godot_bsp_importer](https://github.com/jitspoe/godot_bsp_importer) -
