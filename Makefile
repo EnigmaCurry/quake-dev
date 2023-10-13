@@ -1,12 +1,12 @@
 ERICW_TOOLS_VERSION ?= 2.0.0-alpha2
 QUAKE_ROOT_ID1 ?= ${HOME}/.steam/steam/steamapps/common/Quake/rerelease/id1
 
-args ?= "+developer 1 -nosound"
+args ?= "+skill 3 +developer 1 -nosound"
 map ?= start
 
 .PHONY: run # Build and run the map
 run: build
-	ironwail -basedir ironwail +map ${map} ${args}
+	ironwail -basedir ironwail  ${args} +map ${map}
 
 .PHONY: build # Build the map
 build:
