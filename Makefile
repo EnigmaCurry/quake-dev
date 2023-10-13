@@ -10,7 +10,7 @@ run: build
 
 .PHONY: build # Build the map
 build:
-	test -f src/${map}.map && (cd ironwail && ../tools/ericw-tools/bin/qbsp -basedir . ../src/${map}.map id1/maps/${map}.bsp && ../tools/ericw-tools/bin/light id1/maps/${map}.bsp) || test -f quake1/${map}.map && (cd ironwail && ../tools/ericw-tools/bin/qbsp -basedir . ../quake1/${map}.map id1/maps/${map}.bsp && ../tools/ericw-tools/bin/light id1/maps/${map}.bsp)
+	export MAP_PATH=quake1/${map}.map; test -f src/${map}.map && export MAP_PATH=src/${map}.map; cd ironwail && ../tools/ericw-tools/bin/qbsp -basedir . ../$${MAP_PATH} id1/maps/${map}.bsp && ../tools/ericw-tools/bin/light id1/maps/${map}.bsp
 
 .PHONY: help # Show this help screen
 help:
@@ -46,6 +46,7 @@ map_src:
 	mkdir -p quake1
 	unzip downloads/quake_map_sources.zip -d quake1
 	perl-rename 'y/A-Z/a-z/' quake1/*
+	chmod u+w quake1/*
 	ln -sf $(realpath wads) ironwail/gfx
 	ln -sf $(realpath wads) src/gfx
 
@@ -80,4 +81,4 @@ install:
 	@test -d ironwail || ${MAKE} --no-print-directory ironwail
 
 clean:
-	rm -f ironwail/id1/maps/${map}.* ironwail/id1/maps/${map}-light.log
+	rm -f ironwail/id1/maps/*

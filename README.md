@@ -128,6 +128,33 @@ make
 make map=e1m1
 ```
 
+### Build from Trenchbroom
+
+As an alternative to running the `make` command on the command line,
+you can build and run directly from trenchbroom.
+
+ * Launch Trenchbroom
+ * Click on `Run` -> `Compile Map...`
+ * Create a new profile, or modify the existing Profile, rename it
+   `build`.
+ * Set the working directory as your main `quake-dev` directory. (eg.
+   `~/git/vendor/enigmacurry/quake-dev`)
+ * Click the `+` button under the `Details` panel, to create a new
+   Task. Select `Run Tool`.
+ * Set the Tool Path to `/usr/bin/make`
+ * Set the Parameters to `build`
+ * You can append whatever other arguments you need as parameters
+   here.
+
+The `Build` profile will only compile your map bsp, but will not
+launch the game. You may create a second profile to build and run the
+game:
+
+ * Create a second profile just like above, and call it `Run`.
+ * This time set the Parameters to `run`.
+
+The `Run` target will build *and* launch the game when its finished.
+
 ### Source files
 
 The files in the `src` directory are for your own maps that you make
@@ -147,11 +174,22 @@ the same name, and it will override the original level.
 
 ### Quake console
 
-You can load any level from inside the [quake
-console](https://www.quakewiki.net/console/console-commands/quake-console-commands/):
+Here are a few useful commands you can use from the [quake
+console](https://www.quakewiki.net/console/console-commands/quake-console-commands/).
+Many of these you must enter each time you load the level, because
+they are cleared on level exit, and you can't set operators like "god"
+mode from autoexec.cfg.
 
  * From inside the game, hit the `~` key to open the console
  * Type `map foo` and press Enter to load the `foo` map.
+ * Type `god` to turn on temporary god mode (cleared on level exit!).
+ * Type `notarget` to turn of player targeting (unless you try to
+   fight them! again, this is cleared on level exit.)
+ * Type `noclip` to be able to fly, this is useful especially because
+   you can fly outside of the level and see everything from an
+   overview. Use the swimming controls `E` and `C` key to ascend and
+   descend, but I like to re-map descend to be `Q` like it is in
+   Godot.
 
 ## Links
 
