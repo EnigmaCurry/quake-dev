@@ -7,7 +7,7 @@ map ?= start
 
 .PHONY: run # Build and run the map
 run: build
-	ironwail -nosound -basedir ironwail +map ${BUILD_MAP_NAME}
+	ironwail -basedir ironwail +map ${BUILD_MAP_NAME} ${QUAKE_ARGS}
 
 .PHONY: build # Build the map
 build:
@@ -78,8 +78,3 @@ deps:
 	${MAKE} --no-print-directory map_wads
 	${MAKE} --no-print-directory map_source
 	${MAKE} --no-print-directory ironwail
-
-.PHONY: run # Build and run the map
-run: build
-	ironwail -basedir ironwail +map ${BUILD_MAP_NAME} ${QUAKE_ARGS}
-
