@@ -85,7 +85,7 @@ start map. The map source is found in the `src` directory named
 
  * Open Trenchbroom
  * Click `Browse` to open an existing .map file.
- * Navigate to the `quake1` directory and open `start.map`.
+ * Navigate to the `games/id1/maps` directory and open `start.map`.
  * Choose `Quake` from the list of games.
  * Use the `Map Format` of `Autodetect` or `Standard`
  * Click OK.
@@ -96,7 +96,6 @@ Modify the level by adding some additional entities to the scene.
  * Click the `Entity` tab, and find the `monster_dog` entity.
  * Drag a few dogs into the main starting area.
  * Go to `File` -> `Save document as`, and save it as `start_dogs.map`
-   inside the `src` directory (not in `quake1`).
  * You may close trenchbroom if you wish.
 
 Build and run the modified map, run:
@@ -153,7 +152,7 @@ you can build and run directly from trenchbroom.
  * Set all the Parameters you need:
 
 ```
--basedir /home/ryan/git/vendor/enigmacurry/quake-dev/ironwail +map start_dogs2
+-game id1 -basedir /home/ryan/git/vendor/enigmacurry/quake-dev/ironwail +map start_dogs2
 ```
 
 At a minimum, your parameters must set the correct full path to your
@@ -164,20 +163,22 @@ Remember to always save your level before trying to launch it!
 
 ## Source files
 
-The files in the `src` directory are for your own maps that you make
-or modify.
+The map source files are organized in the `games` directory.
 
-The files in the `quake1` directory are copies of the original quake
-levels ([open sourced by John Romero in
+The files in the `games/id1` directory are copies of the original
+quake levels ([open sourced by John Romero in
 2016!](https://rome.ro/news/2016/2/14/quake-map-sources-released)).
 These files can be very useful to examine for your own design ideas.
 
-Maps from either of these directories can be edited and played (eg.
-`make map=e1m1` loads e1m1.map from the quake1 directory). The `src`
-directory takes precedence over the `quake1` directory, so I recommend
-you treat the `quake1` directory as read-only, and if you wish to edit
-one of the original levels, copy it to the `src` directory first, with
-the same name, and it will override the original level.
+You can create your own directories under `games` for your own games.
+
+When running make, you must specify the game to use, which by default
+is `id1`.
+
+```
+# Run the map called 'bar' in the game called 'foo' from the file: games/foo/maps/bar.map
+make game=foo map=bar
+```
 
 ## Quake console
 
