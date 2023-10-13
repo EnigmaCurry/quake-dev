@@ -3,10 +3,13 @@ QUAKE_ROOT_ID1 ?= ${HOME}/.steam/steam/steamapps/common/Quake/rerelease/id1
 
 game ?= id1
 map ?= start
-args ?= "+skill 3 +developer 1 -nosound"
+args ?= "+skill 3 +developer 1"
 
 .PHONY: run # Build and run the map
-run: build
+run: build launch
+
+.PHONY: launch
+launch:
 	ironwail -basedir ironwail  ${args} -game ${game} +map ${map}
 
 .PHONY: build # Build the map

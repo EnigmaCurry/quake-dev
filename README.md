@@ -163,7 +163,7 @@ Remember to always save your level before trying to launch it!
 
 ## Source files
 
-The map source files are organized in the `games` directory.
+All of the map source files are organized in the `games` directory.
 
 The files in the `games/id1` directory are copies of the original
 quake levels ([open sourced by John Romero in
