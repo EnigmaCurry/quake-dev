@@ -54,6 +54,10 @@ map_wads:
 	curl -C - -L -o downloads/quake_old_wads.zip https://valvedev.info/tools/quake-map-sources-and-original-wads/quake_old_wads.zip
 	mkdir -p wads
 	unzip downloads/quake_old_wads.zip -d wads
+	curl -C - -L -o wads/prototype_1_3.wad https://github.com/jonathanlinat/quake-leveldesign-starterkit/raw/master/wads/prototype_1_3.wad
+	curl -C - -L -o wads/rogue.wad https://github.com/jonathanlinat/quake-leveldesign-starterkit/raw/master/wads/rogue.wad
+	curl -C - -L -o wads/hipnotic.wad https://github.com/jonathanlinat/quake-leveldesign-starterkit/raw/master/wads/hipnotic.wad
+	curl -C - -L -o wads/id1.wad https://github.com/jonathanlinat/quake-leveldesign-starterkit/raw/master/wads/id1.wad
 	perl-rename 'y/A-Z/a-z/' wads/*
 
 ironwail:

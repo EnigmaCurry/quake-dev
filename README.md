@@ -197,11 +197,16 @@ mode from autoexec.cfg.
    overview. Use the swimming controls `E` and `C` key to ascend and
    descend, but I like to re-map descend to be `Q` like it is in
    Godot.
+ * Type `r_lightmap 1` to enable in-game rendering of the light map
+   areas.
+ * Type `r_showtris 2` to show triangle geometries.
 
 ## Links
 
  * [dumptruck_ds trenchbroom
    series](https://www.youtube.com/playlist?list=PLgDKRPte5Y0AZ_K_PZbWbgBAEt5xf74aE)
+ * [func_msgboard](https://www.celephais.net/board/forum.php)
+ * [Quake map archive](https://www.quaddicted.com/)
  * [Quake mapping tips video](https://yewtu.be/watch?v=G4tWWiuaF7g)
  * [Quake command line arguments](https://quakewiki.org/wiki/Command_line_parameters) (these are the same with ironwail)
  * [Quake console commands](https://www.quakewiki.net/console/console-commands/quake-console-commands/)
@@ -214,3 +219,7 @@ mode from autoexec.cfg.
  * [Godot FPS quickstart](https://github.com/StayAtHomeDev-Git/FPS-Godot-Basic-Setup)
  * [BloodThief game using Qodot](https://yewtu.be/watch?v=DMJ7i4nuMVA)
  * [Interesting maps and dev-blog](https://shoresofnis.wordpress.com/maps/)
+ * Lights:
+   * [Light chart](https://www.quaketastic.com/files/light_chart_01.jpg)
+   * [Light test](https://www.quaketastic.com/files/LightTest.jpg)
+   * [Light model](https://www.bluesnews.com/abrash/chap68.shtml)
