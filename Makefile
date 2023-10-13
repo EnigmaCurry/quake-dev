@@ -1,7 +1,7 @@
 ERICW_TOOLS_VERSION ?= 2.0.0-alpha2
 QUAKE_ROOT_ID1 ?= ${HOME}/.steam/steam/steamapps/common/Quake/rerelease/id1
 BUILD_MAP_NAME ?= out
-QUAKE_ARGS ?= -nosound
+QUAKE_ARGS ?= +developer 1 -nosound 
 
 map ?= start
 
