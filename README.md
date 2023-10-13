@@ -137,8 +137,8 @@ you can build and run directly from trenchbroom.
  * Click on `Run` -> `Compile Map...`
  * Create a new profile, or modify the existing Profile, rename it
    `build`.
- * Set the working directory as your main `quake-dev` directory. (eg.
-   `~/git/vendor/enigmacurry/quake-dev`)
+ * Set the working directory as the full path to your main `quake-dev`
+   directory. (eg. `/home/ryan/git/vendor/enigmacurry/quake-dev`)
  * Click the `+` button under the `Details` panel, to create a new
    Task. Select `Run Tool`.
  * Set the Tool Path to `/usr/bin/make`
@@ -146,16 +146,23 @@ you can build and run directly from trenchbroom.
  * You can append whatever other arguments you need as parameters
    here.
 
-The `Build` profile will only compile your map bsp, but will not
-launch the game. You may create a second profile to build and run the
-game:
+### Launch from Trenchbroom
 
- * Create a second profile just like above, and call it `Run`.
- * This time set the Parameters to `run`.
+ * Click `Run` -> `Launch Engine...`
+ * Click on the `ironwail` profile you created before.
+ * Set all the Parameters you need:
 
-The `Run` target will build *and* launch the game when its finished.
+```
+-basedir /home/ryan/git/vendor/enigmacurry/quake-dev/ironwail +map start_dogs2
+```
 
-### Source files
+At a minimum, your parameters must set the correct full path to your
+basedir (the parent directory of `id1`) and the name of the map you
+want to launch.
+
+Remember to always save your level before trying to launch it!
+
+## Source files
 
 The files in the `src` directory are for your own maps that you make
 or modify.
@@ -172,7 +179,7 @@ you treat the `quake1` directory as read-only, and if you wish to edit
 one of the original levels, copy it to the `src` directory first, with
 the same name, and it will override the original level.
 
-### Quake console
+## Quake console
 
 Here are a few useful commands you can use from the [quake
 console](https://www.quakewiki.net/console/console-commands/quake-console-commands/).
