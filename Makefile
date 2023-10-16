@@ -13,8 +13,19 @@ launch:
 	ironwail -basedir ironwail  ${args} -game ${game} +map ${map}
 
 .PHONY: build # Build the map
-build:
-	cd ironwail && ../tools/ericw-tools/bin/qbsp -basedir . ../games/${game}/maps/${map}.map ${game}/maps/${map}.bsp && ../tools/ericw-tools/bin/light ${game}/maps/${map}.bsp && ../tools/ericw-tools/bin/vis ${game}/maps/${map}.bsp
+build: build-dir qbsp light vis
+
+build-dir:
+	mkdir -p ironwail/${game}/maps
+
+qbsp:
+	tools/ericw-tools/bin/qbsp -basedir ironwail games/${game}/maps/${map}.map ironwail/${game}/maps/${map}.bsp
+
+light:
+	tools/ericw-tools/bin/light -basedir ironwail ironwail/${game}/maps/${map}.bsp
+
+vis:
+	tools/ericw-tools/bin/vis -basedir ironwail ironwail/${game}/maps/${map}.bsp
 
 .PHONY: help # Show this help screen
 help:
