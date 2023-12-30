@@ -6,8 +6,7 @@ This is a development environment for making
 loosly follows the excellent guides from
 [dumptruck_ds](https://www.youtube.com/playlist?list=PLgDKRPte5Y0AZ_K_PZbWbgBAEt5xf74aE)
 and
-[jonathanlinat/quake-leveldesign-starterkit](https://github.com/jonathanlinat/quake-leveldesign-starterkit),
-both of which are unfortunately focused toward MS windows platform.
+[jonathanlinat/quake-leveldesign-starterkit](https://github.com/jonathanlinat/quake-leveldesign-starterkit). When I started this project, quake-leveldesign-starterkit was made for MS Windows only, but it has since started supporting Debian Linux, so you may want to check that out first!
 
 ## Pre-requisites
 
